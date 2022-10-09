@@ -1,0 +1,47 @@
+#数据源连接信息
+spring:
+  redis:
+    host: 43.138.64.89
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+      lettuce:
+        shutdown-timeout: 0
+  datasource:
+    username: user
+    password: user
+    url: jdbc:mysql://43.138.64.89:3300/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    max-idle: 10
+    max-wait: 1000
+    min-idle: 5
+    initial-size: 5
+  logging:
+    level:
+      #包的日志级别
+      org.springframework.web: DEBUG
+    #自定义log信息
+    config: classpath:config/logback-spring.xml
+    pattern:
+      #控制台的日志输出格式
+      console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
+      #文件的日志输出格式
+      file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
+    file:
+      #日志名称
+      name: app.log
+      #存储的路径
+      path: ./log/
+      #存储的最大值
+      max-size: 10MB
+      #保存时间
+      max-history: 2
+
+
+server:
+  port: 8080
