@@ -29,7 +29,7 @@ public class SpringThreadPool {
         //设置线程池中任务的等待时间，如果超过这个时候还没有销毁就强制销毁，以确保应用最后能够被关闭，而不是阻塞住
         executor.setAwaitTerminationSeconds(60);
         // 设置默认线程名称
-        executor.setThreadNamePrefix("CodehomeAsyncTask-");
+        executor.setThreadNamePrefix("DemoThreadPool-");
         // 设置拒绝策略
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         // 等待所有任务结束后再关闭线程池
