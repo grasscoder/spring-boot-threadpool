@@ -1,15 +1,29 @@
 package org.example;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Solution {
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 5, 6};
         System.out.println(binarySearch(arr, 0, arr.length - 1, 1));
+        System.out.println((1 << 31) - 1);
+        System.out.println(-(1 << 31));
+        //System.out.println(Math.pow(11, 2));
+        System.out.println(pow(10));
     }
 
+    static long pow(int k){
+        int init = 10;
+        if(k == 1){
+            return init;
+        }
+        return init*pow(k-1);
+    }
     public static int minIndex(int[] nums, int target) {
         int index = binarySearch(nums, 0, nums.length - 1, target);
         if (index == -1) {
-
+            ReentrantLock lock = new ReentrantLock();
+            lock.lock();
         }
         return 0;
     }

@@ -41,7 +41,16 @@ spring:
       max-size: 10MB
       #保存时间
       max-history: 2
-
+#spring-boot 监控配置
+management:
+  endpoints:
+    web:
+      base-path: /actuator #配置端点访问前缀
+      exposure:
+        include: '*' #暴露所有端点
+  endpoint:
+    health:
+      show-details: always
 
 server:
   port: 8080
