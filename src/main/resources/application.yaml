@@ -1,5 +1,7 @@
 #数据源连接信息
 spring:
+  application:
+    name: provide-service
   redis:
     host: 43.138.64.89
     port: 6379
@@ -53,4 +55,8 @@ management:
       show-details: always
 
 server:
-  port: 8080
+  port: 8081
+#nacos配置
+nacos:
+  discovery:
+    server-addr: 127:0:0:1:8848
